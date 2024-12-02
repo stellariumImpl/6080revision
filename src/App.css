@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+.app {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #fff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  box-sizing: border-box;
+}
+
+.nav-item {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-logo {
+  width: 20px;
+  height: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-text-short {
+  display: none;
+}
+
+@media screen and (max-width: 1430px) {
+  .navbar {
+    height: 80px;
   }
-  to {
-    transform: rotate(360deg);
+  .main-content {
+    min-height: calc(100vh - 80px);
+    padding-bottom: 80px;
   }
+  .nav-text-long {
+    display: none;
+  }
+  .nav-text-short {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .navbar {
+    height: 40px;
+  }
+  .main-content {
+    min-height: calc(100vh - 40px);
+    padding-bottom: 40px;
+  }
+}
+
+/* Dashboard 网格布局 */
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: calc(100vh - 100px);
+}
+
+.dashboard-grid {
+  display: grid;  /* 使用网格布局 */
+  grid-template-columns: repeat(2, 1fr); /* 创建2列，每列占用相等空间 */
+  gap: 20px; /* 网格项之间的间距 */
+  width: 400px; /* 限制整体宽度，使盒子不会太大 */
+}
+
+.dashboard-box {
+  background-color: #333;
+  border: 1px solid #fff;  /* 题目要求的白色边框 */
+  padding: 20px; /* 内容和边框的间距 */
+  display: flex; /* 使用弹性布局 */
+  justify-content: center; /* 内容水平居中 */
+  align-items: center; /* 内容垂直居中 */
+  min-height: 100px; /* 确保盒子有足够高度 */
 }
